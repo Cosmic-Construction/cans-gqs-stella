@@ -19,6 +19,10 @@ from .planar_spherical_bridge import (
     TopologyEmbeddingIntegrator,
     EulerCharacteristicAnalyzer,
 )
+from .dynamic_helix_embedding import (
+    DynamicHelixEmbedding,
+    HelixStrand,
+)
 
 __all__ = [
     'CircleTopology',
@@ -27,4 +31,6 @@ __all__ = [
     'PlanarSphericalBridge',
     'TopologyEmbeddingIntegrator',
     'EulerCharacteristicAnalyzer',
+    'DynamicHelixEmbedding',
+    'HelixStrand',
 ]
