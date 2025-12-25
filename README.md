@@ -116,6 +116,9 @@ python examples/example_06_molecular_dynamics.py
 # FEA mesh quality analysis
 python examples/example_07_fea_mesh_quality.py
 
+# Neural embeddings with polytope topology
+python examples/example_08_neural_polytope_embeddings.py
+
 # Performance benchmarks
 python examples/benchmark_performance.py
 ```
@@ -145,6 +148,17 @@ This repository now includes **all** features from the comprehensive "all in one
 - ✅ **Data Analysis**: 4D data cluster angular characterization
 - ✅ **Query Language**: Domain-specific queries for MD, FEA, and CAD
 - ✅ **Strategic Positioning**: Academic credibility and market positioning frameworks
+
+### Part 5: Neural Embeddings with Polytope Topology ⭐ NEW ⭐
+- ✅ **Polytope-Structured Embeddings**: Extend standard matrix embeddings using regular polytope topology
+- ✅ **3D Platonic Solids**: Tetrahedron, cube, octahedron, dodecahedron, icosahedron
+- ✅ **4D Regular Polytopes**: 5-cell, tesseract, 16-cell, 24-cell, 120-cell, 600-cell
+- ✅ **Stella4D Inspired**: Based on [Stella4D software](https://www.software3d.com/StellaManual.php?prod=Stella4D) and [120-cell](https://www.software3d.com/120Cell.php) structure
+- ✅ **Geodesic Metrics**: Distance computation on polytope surfaces
+- ✅ **Angular Preservation**: Integration with CANS for geometric relationship preservation
+- ✅ **nD Support**: Simplexes, hypercubes, and cross-polytopes in arbitrary dimensions
+
+See [NEURAL_EMBEDDINGS.md](NEURAL_EMBEDDINGS.md) for detailed documentation.
 
 ### Quick Start: Physics Simulation
 
@@ -180,6 +194,47 @@ for step in range(1000):
     
 print(f"Final energy: {p1.kinetic_energy() + p2.kinetic_energy():.4f} J")
 ```
+
+### Quick Start: Neural Embeddings with Polytope Topology
+
+```python
+from cans_gqs.neural_embeddings import (
+    MatrixEmbedding,
+    PolytopeEmbedding,
+    EmbeddingConfig,
+    compare_embeddings,
+)
+import numpy as np
+
+# Generate high-dimensional data
+data = np.random.randn(100, 50)
+
+# Configure embedding
+config = EmbeddingConfig(
+    embedding_dim=3,
+    num_points=100,
+    use_normalization=True,
+)
+
+# Standard matrix embedding (baseline)
+matrix_emb = MatrixEmbedding(config, method="pca")
+matrix_result = matrix_emb.fit_transform(data)
+
+# Polytope embedding using dodecahedron structure
+polytope_emb = PolytopeEmbedding(
+    config,
+    polytope_type="dodecahedron",
+    preserve_angles=True,
+)
+polytope_result = polytope_emb.fit_transform(data)
+
+# Compare embeddings
+comparison = compare_embeddings(matrix_result, polytope_result, original_data=data)
+print(f"Neighborhood preservation: {comparison['mean_neighborhood_preservation']:.3f}")
+print(f"Distance correlation: {comparison['distance_correlation']:.3f}")
+```
+
+See [NEURAL_EMBEDDINGS.md](NEURAL_EMBEDDINGS.md) for detailed documentation.
 
 See [IMPLEMENTATION.md](IMPLEMENTATION.md) for detailed documentation of all features.
 
