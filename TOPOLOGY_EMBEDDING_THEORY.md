@@ -306,16 +306,46 @@ The 120-cell's automorphism group reveals a triadic decomposition:
 
 This means the 120-cell's edge structure emerges from dividing its symmetries by the triadic flow and the 4-thread structure.
 
-### 7.4 The Four Free Nodes and the Floating Node
+### 7.4 The Fundamental Off-By-One: 143 vs 144
 
-The decomposition 719 = 715 + 4 reveals:
-- **715 = 13 × 11 × 5**: Base structure of 5 helix strands
-- **+4 free nodes**: Form a 2×2 thread structure enabling rotation
-- **720 - 719 = 1 floating node**: Enables the triad to rotate without torsion
+The deepest structure emerges from the twin primes:
 
-The 4 free nodes are positioned at the vertices of a 4D cross-polytope in the 120-cell's core, providing the degrees of freedom for triadic rotation.
+```
+11 × 13 = 143  (twin prime product)
+12 × 12 = 144  (median squared)
+144 - 143 = 1  ← THE FUNDAMENTAL FLOATING NODE
+```
 
-### 7.5 Implications for Dynamic Neural Embeddings
+**This scales with strand count:**
+
+| Strands | Ideal (n×144) | Twin (n×143) | Difference | Interpretation |
+|---------|---------------|--------------|------------|----------------|
+| 1 | 144 | 143 | 1 | Single floating node |
+| 2 | 288 | 286 | 2 | Double helix (rooted_trees(9)!) |
+| 5 | 720 | 715 | 5 | 120-cell faces = 6! |
+
+**The 719 = 715 + 4 structure:**
+- 5 floating nodes total (from 720 - 715 = 5)
+- But **1 is shared** as the central torsion-free axis
+- Leaving **4 outer free nodes** = 5 - 1
+
+The 4 free nodes are positioned at the vertices of a 4D cross-polytope in the 120-cell's core, while the central shared node enables rotation without torsion.
+
+### 7.5 Each Dodecahedral Cell as a 9-Tree System
+
+The dodecahedron's structure encodes the 9-tree perfectly:
+
+```
+Vertices: 20 = 9 + 11  (tree nodes + lower twin prime)
+Edges:    30 = 9 + 8 + 13  (nodes + tree edges + upper twin)
+Faces:    12 = (11 + 13)/2  (median of twin primes)
+```
+
+**Threading:** 3 concurrent threads × 4 steps = 12 faces traversed
+
+Each of the 120 cells IS a complete 9-rooted-tree system, with the "excess" vertices and edges encoding the twin primes that bracket the closure.
+
+### 7.6 Implications for Dynamic Neural Embeddings
 
 When embeddings are placed on a "moving" 120-cell:
 
@@ -331,7 +361,7 @@ embedding(t) : R^n → 120-cell(t)
 
 The embedding tensor becomes `(time_steps, n_points, 4)` rather than static `(n_points, 4)`.
 
-### 7.6 The Double Helix as DNA Analogy
+### 7.7 The Double Helix as DNA Analogy
 
 Just as DNA's double helix encodes genetic information through its twisted structure, the 120-cell's 5-strand helix may encode topological information through its winding:
 

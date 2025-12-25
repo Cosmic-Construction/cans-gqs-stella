@@ -23,6 +23,13 @@ from .dynamic_helix_embedding import (
     DynamicHelixEmbedding,
     HelixStrand,
 )
+from .nested_tree_cells import (
+    OffByOneStructure,
+    TwinPrimeMedian,
+    NineNodeRootedTree,
+    DodecahedralCell,
+    OneTwentyCellNesting,
+)
 
 __all__ = [
     'CircleTopology',
@@ -33,4 +40,9 @@ __all__ = [
     'EulerCharacteristicAnalyzer',
     'DynamicHelixEmbedding',
     'HelixStrand',
+    'OffByOneStructure',
+    'TwinPrimeMedian',
+    'NineNodeRootedTree',
+    'DodecahedralCell',
+    'OneTwentyCellNesting',
 ]
