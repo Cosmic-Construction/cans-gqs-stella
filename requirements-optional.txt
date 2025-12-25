@@ -1,0 +1,11 @@
+# Optional dependencies for CANS-GQS
+# Install with: pip install -r requirements-optional.txt
+
+# All optional features
+numba>=0.54.0
+clifford>=1.4.0
+scikit-learn>=1.0.0
+
+# GPU acceleration (uncomment based on your CUDA version)
+# cupy-cuda11x>=10.0.0
+# cupy-cuda12x>=12.0.0
