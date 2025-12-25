@@ -56,6 +56,15 @@ from .neural_embeddings.visualization import (
     visualize_polytope_embedding_process,
 )
 
+# Topology analysis (circle topology, dimensional analysis)
+from .topology.circle_topology import CircleTopology
+from .topology.flip_transforms import CircleExpression, find_flip_clusters
+from .topology.planar_spherical_bridge import (
+    PlanarSphericalBridge,
+    TopologyEmbeddingIntegrator,
+    EulerCharacteristicAnalyzer,
+)
+
 __all__ = [
     "PolyhedralAngleSystem",
     "NDVertex",
@@ -91,4 +100,11 @@ __all__ = [
     "EmbeddingVisualizer",
     "compare_embeddings",
     "visualize_polytope_embedding_process",
+    # Topology analysis
+    "CircleTopology",
+    "CircleExpression",
+    "find_flip_clusters",
+    "PlanarSphericalBridge",
+    "TopologyEmbeddingIntegrator",
+    "EulerCharacteristicAnalyzer",
 ]
